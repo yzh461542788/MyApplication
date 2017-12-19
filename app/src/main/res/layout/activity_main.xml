@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<TextView
+android:id="@+id/textView1"
+android:layout_width="40dp"
+android:layout_height="wrap_content"
+android:layout_alignParentLeft="true"
+android:layout_centerVertical="true"
+android:lines="1"
+android:padding="1dp"
+android:text="地址"
+android:textSize="11sp" />
+
+<View
+android:id="@+id/view1"
+android:layout_width="1dip"
+android:layout_height="fill_parent"
+android:layout_centerVertical="true"
+android:layout_gravity="center_horizontal"
+android:layout_marginLeft="2dp"
+android:layout_marginRight="2dp"
+android:layout_toRightOf="@+id/textView1"
+android:background="#EEEFFF" />
+
+
+<library.PinnedHeaderListView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+<EditText
+android:id="@+id/address"
+android:layout_width="wrap_content"
+android:layout_height="40dp"
+android:layout_centerVertical="true"
+android:layout_marginLeft="2dp"
+android:layout_toRightOf="@+id/view1"
+android:ems="19"
+android:hint="请输入地址"
+android:inputType="phone"
+android:padding="1dp"
+android:textSize="12sp" >
+
+<requestFocus />
+</EditText>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/address"
+        android:layout_marginTop="28dp"
+        android:text="食物"
+        android:textSize="11sp"/>
+
+
+    <ImageView
+        android:id="@+id/del_phonenumber"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="3dp"
+        android:visibility="invisible"
+        app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+</RelativeLayout>
