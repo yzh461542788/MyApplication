@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 public class ShoppingEntity {
 
     @SerializedName("id")
-    String id;
+    long id;
 
     @SerializedName("name")
     String name;
@@ -44,11 +44,11 @@ public class ShoppingEntity {
         return entity;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

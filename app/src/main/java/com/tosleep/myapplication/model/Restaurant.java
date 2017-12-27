@@ -1,6 +1,7 @@
 package com.tosleep.myapplication.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by yuzhaoxin on 2017/12/18.
@@ -19,6 +20,24 @@ public class Restaurant implements Serializable {
     private double meituanShippingFee;
     private String elemeId;
     private String meituanId;
+    private List<Discount> elemeDiscounts;
+    private List<Discount> meituanDiscounts;
+
+    public List<Discount> getElemeDiscounts() {
+        return elemeDiscounts;
+    }
+
+    public void setElemeDiscounts(List<Discount> elemeDiscounts) {
+        this.elemeDiscounts = elemeDiscounts;
+    }
+
+    public List<Discount> getMeituanDiscounts() {
+        return meituanDiscounts;
+    }
+
+    public void setMeituanDiscounts(List<Discount> meituanDiscounts) {
+        this.meituanDiscounts = meituanDiscounts;
+    }
 
     public String getImagePath() {
         return imagePath;

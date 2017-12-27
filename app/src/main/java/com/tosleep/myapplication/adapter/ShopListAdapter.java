@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.tosleep.myapplication.R;
 import com.tosleep.myapplication.model.Restaurant;
+import com.tosleep.myapplication.model.ShoppingCart;
 
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ShopListAdapter extends ArrayAdapter<Restaurant> {
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View rowView = inflater.inflate(R.layout.list_item, parent, false);
+        View rowView = inflater.inflate(R.layout.layout_shop_item, parent, false);
         Restaurant restaurant = mRestaurants.get(position);
 
         ImageView avatar = rowView.findViewById(R.id.shop_avatar);
@@ -49,7 +50,7 @@ public class ShopListAdapter extends ArrayAdapter<Restaurant> {
         TextView contentView = rowView.findViewById(R.id.txt_content);
         contentView.setText(content);
         // TODO: render the list item view
-
+        ShoppingCart shoppingCart = ShoppingCart.getInstance();
         return rowView;
     }
 }

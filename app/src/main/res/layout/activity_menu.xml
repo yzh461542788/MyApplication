@@ -1,114 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/light_gray_bg"
-    >
-
-    <com.flipboard.bottomsheet.BottomSheetLayout
-        android:id="@+id/bottom_sheet_layout"
-        android:layout_width="match_parent"
-        android:layout_height="448dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ListView
-                android:id="@+id/lv_product_category"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:choiceMode="singleChoice"
-                android:divider="@null"
-                android:fadingEdge="none"
-                android:scrollbars="none"
-                tools:listitem="@layout/layout_product_category_item" />
-
-            <View
-                android:layout_width="@dimen/divider_size"
-                android:layout_height="match_parent"
-                android:background="@color/divider" />
-
-            <za.co.immedia.pinnedheaderlistview.PinnedHeaderListView
-                android:id="@+id/lv_product_list"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fadingEdge="none"
-                android:scrollbars="none"
-                android:divider="@null"
-                />
-
-        </LinearLayout>
-
-    </com.flipboard.bottomsheet.BottomSheetLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/divider_size"
-        android:background="@color/divider"
-        />
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:background="@color/dark_gray_bg"
-        >
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="48dp">
 
-        <LinearLayout
-            android:id="@+id/layout_shopping_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_minor"
-            android:gravity="center_vertical"
-            >
-
-            <ImageView
-                android:id="@+id/img_cart_logo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/selector_shopping_cart"
-                />
-
-            <TextView
-                android:id="@+id/txt_selected_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/spacing_minor"
-                android:layout_marginRight="@dimen/spacing_minor"
-                android:text="@string/label_zero_count"
-                android:textSize="@dimen/font_normal"
-                android:textColor="@color/secondary_text"
-                />
-
-            <TextView
-                android:id="@+id/txt_total_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_zero_price"
-                android:textSize="@dimen/font_normal"
-                android:textColor="@color/secondary_text"
-                />
-
-        </LinearLayout>
-
-        <Space
+        <ListView
+            android:id="@+id/lv_menu"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            />
+            android:scrollbars="none" />
 
-        <Button
-            android:id="@+id/btn_settle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_minor"
-            android:enabled="false"
-            android:text="TODO" />
-
+        <za.co.immedia.pinnedheaderlistview.PinnedHeaderListView
+            android:id="@+id/lv_item"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@android:color/white" />
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4E4E4E">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_nm"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_toLeftOf="@+id/textView4"
+            android:layout_toStartOf="@+id/textView4"
+            android:background="@mipmap/ic_launcher"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/imageView2"
+            android:text="¥0"
+            android:textColor="@color/white"
+            android:textSize="21sp" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:text="¥30起送"
+            android:textColor="@color/accent"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

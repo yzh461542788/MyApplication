@@ -43,7 +43,7 @@ public class ShoppingCart {
      * @return 是否添加成功
      */
     public boolean push(Product product) {
-        String id = product.getId();
+        String id = product.getId() + "";
         if (mShoppingList.isEmpty()) {
             // 第一次添加需要记录商家ID
             mBusinessId = product.getRestaurantId();
@@ -75,7 +75,7 @@ public class ShoppingCart {
      * @return 是否减少成功
      */
     public boolean pop(Product product) {
-        String id = product.getId();
+        String id = String.valueOf(product.getId());
         if (mShoppingList.containsKey(id)) {
             ShoppingEntity entity = mShoppingList.get(id);
             int originQuantity = entity.getQuantity();
@@ -102,7 +102,7 @@ public class ShoppingCart {
      * @return 是否添加成功
      */
     public boolean set(Product product, int quantity) {
-        String id = product.getId();
+        String id = String.valueOf(product.getId());
         if (mShoppingList.isEmpty()) {
             // 第一次添加需要记录商家ID
             mBusinessId = product.getRestaurantId();
@@ -137,7 +137,7 @@ public class ShoppingCart {
             Product product = entity.getProduct();
             if (product != null) {
                 mBusinessId = product.getRestaurantId();
-                mShoppingList.put(product.getId(), entity);
+                mShoppingList.put(String.valueOf(product.getId()), entity);
             }
         }
         sendChangeEvent();
@@ -191,12 +191,29 @@ public class ShoppingCart {
      * @return 商品数量
      */
     public int getQuantityForProduct(Product product) {
-        String id = product.getId();
+        long id = product.getId();
         if (mShoppingList.containsKey(id)) {
             return mShoppingList.get(id).getQuantity();
         }
 
         return 0;
+    }
+
+    /**
+     * 获取购物车里指定商品分类的数量
+     * @param category 指定的商品分类
+     * @return 商品数量
+     */
+    public int getQuantityForCategory(ProductCategory category) {
+        int totalQuantity = 0;
+        for (ShoppingEntity entry : mShoppingList.values()) {
+            Product product = entry.getProduct();
+            if (product != null && product.getCategoryId().equals(category.getId())) {
+                totalQuantity += entry.getQuantity();
+            }
+        }
+
+        return totalQuantity;
     }
 
     /**

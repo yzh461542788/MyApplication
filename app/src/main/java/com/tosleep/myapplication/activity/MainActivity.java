@@ -29,10 +29,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("MAIN", "item has bee clicked");
                 Restaurant restaurant = (Restaurant) adapterView.getItemAtPosition(i);
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("restaurant", restaurant);
+                intent.putExtra("restaurant", restaurant);
                 Log.e("MAIN", restaurant.toString());
-                startActivity(intent, bundle);
+                MainActivity.this.startActivity(intent);
             }
         });
     }

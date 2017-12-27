@@ -8,4 +8,7 @@
     <string name="dialog_clear_shopping_cart_message">购物车已清空</string>
     <string name="dialog_confirm">确认</string>
     <string name="dialog_cancel">取消</string>
+    <string name="dialog_shopping_cart_business_conflict_title">购物车商品冲突</string>
+    <string name="dialog_shopping_cart_business_conflict_message">购物车里已有其他店铺的商品了,请先清空</string>
+    <string name="dialog_clear">清除</string>
 </resources>

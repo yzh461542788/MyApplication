@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 public class Product {
     //在饿了么中的itemId
     @SerializedName("id")
-    String _id;
+    long id;
 
     //用饿了么餐馆id而不是美团
     @SerializedName("restaurant_id")
@@ -24,10 +24,10 @@ public class Product {
     String name;
 
     @SerializedName("eleme_price")
-    Double elemePrice;
+    double elemePrice;
 
     @SerializedName("meituan_price")
-    Double meituanPrice;
+    double meituanPrice;
 
     @SerializedName("description")
     String description;
@@ -47,12 +47,12 @@ public class Product {
     @SerializedName("meituan_rate")
     int meituanRate;
 
-    public String getId() {
-        return _id;
+    public long getId() {
+        return id;
     }
 
-    public void setId(String id) {
-        this._id = id;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getRestaurantId() {
@@ -79,7 +79,7 @@ public class Product {
         this.name = name;
     }
 
-    public Double getElemePrice() {
+    public double getElemePrice() {
         return elemePrice;
     }
 
@@ -87,7 +87,7 @@ public class Product {
         this.elemePrice = elemePrice;
     }
 
-    public Double getMeituanPrice() {
+    public double getMeituanPrice() {
         return meituanPrice;
     }
 
@@ -146,7 +146,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + _id +
+                "id=" + id +
                 ", restaurantId=" + restaurantId +
                 ", name='" + name + '\'' +
                 ", elemePrice=" + elemePrice +
